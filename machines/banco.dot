@@ -1,0 +1,49 @@
+digraph MealyMachine2 {
+    rankdir=LR;
+    node [shape = circle];
+
+    // Estado inicial (doble círculo)
+    node [shape = doublecircle]; p0;
+    node [shape = circle]; // Resto de los estados
+
+    // Flecha de entrada al estado inicial
+    start [shape = point, width = 0];
+    start -> p0;
+
+    // Transiciones desde p0
+    p0 -> p1 [label = "Vt"];
+
+    // Transiciones desde p1
+    p1 -> p2 [label = "Ce / Ch"];
+    p1 -> p0 [label = "Cr / Cb"];
+
+    // Transiciones desde p2
+    p2 -> p3 [label = "Vcl"];
+    p2 -> p9 [label = "Toc"];
+
+    // Transiciones desde p3
+    p3 -> p4 [label = "Op / Cok"];
+    p3 -> p2 [label = "Cn / Cneg"];
+    p3 -> p0 [label = "Tif / N"];
+
+    // Transiciones desde p4
+    p4 -> p6 [label = "Vm"];
+    p4 -> p5 [label = "Cs"];
+    p4 -> p7 [label = "Gnu"];
+
+    // Transiciones desde p5
+    p5 -> p8 [label = "Es / S"];
+
+    // Transiciones desde p6
+    p6 -> p0 [label = "Mnv / Fins"];
+    p6 -> p8 [label = "Mv / Fok"];
+
+    // Transiciones desde p7
+    p7 -> p8 [label = "Cg"];
+
+    // Transiciones desde p8
+    p8 -> p0 [label = "epsilon / E"];
+
+    // Transiciones desde p9
+    p9 -> p0 [label = "Rc"];
+}

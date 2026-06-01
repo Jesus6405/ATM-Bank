@@ -1,0 +1,80 @@
+digraph MealyMachine {
+    rankdir=LR;
+    node [shape = circle];
+
+    // Estado inicial (con doble círculo)
+    node [shape = doublecircle]; q0;
+    node [shape = circle]; // Resto de los estados
+
+    // Nodo invisible para la flecha de entrada a q0
+    start [shape = point, width = 0];
+    start -> q0;
+
+    // Transiciones desde q0
+    q0 -> q1 [label = "T / Vt"];
+
+    // Transiciones desde q1
+    q1 -> q2 [label = "Ch"];
+    q1 -> q9 [label = "Cb"];
+    q1 -> q13 [label = "To / Toc"];
+
+    // Transiciones desde q2
+    q2 -> q3 [label = "Cl / Vcl"];
+    q2 -> q0 [label = "E"];
+
+    // Transiciones desde q3
+    q3 -> q4 [label = "Cok"];
+    q3 -> q2 [label = "Cneg"];
+    q3 -> q9 [label = "N"];
+    q3 -> q13 [label = "To / Toc"];
+
+    // Transiciones desde q4
+    q4 -> q5 [label = "Sr"];
+    q4 -> q7 [label = "Sca"];
+    q4 -> q11 [label = "Sco / Cs"];
+    q4 -> q13 [label = "To / Toc"];
+
+    // Transiciones desde q5
+    q5 -> q4 [label = "Co"];
+    q5 -> q6 [label = "Mr / Vm"];
+
+    // Transiciones desde q6
+    q6 -> q13 [label = "To / Toc"];
+    q6 -> q16 [label = "Fok"];
+    q6 -> q15 [label = "Fins"];
+
+    // Transiciones desde q7
+    q7 -> q4 [label = "Co"];
+    q7 -> q8 [label = "Cnu"];
+
+    // Transiciones desde q8
+    q8 -> q12 [label = "Ccnu"];
+    q8 -> q13 [label = "To / Toc"];
+
+    // Transiciones desde q9
+    q9 -> q0 [label = "E"];
+
+    // Transiciones desde q10
+    q10 -> q0 [label = "E"];
+
+    // Transiciones desde q11
+    q11 -> q10 [label = "S"];
+    q11 -> q4 [label = "Co"];
+    q11 -> q13 [label = "To / Toc"];
+
+    // Transiciones desde q12
+    q12 -> q7 [label = "Cnc"];
+    q12 -> q14 [label = "Cc / Gnu"];
+
+    // Transiciones desde q13
+    q13 -> q0 [label = "E"];
+
+    // Transiciones desde q14
+    q14 -> q10 [label = "Cg"];
+
+    // Transiciones desde q15
+    q15 -> q0 [label = "E"];
+
+    // Transiciones desde q16
+    q16 -> q10 [label = "Dr"];
+}
