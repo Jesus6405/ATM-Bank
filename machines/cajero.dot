@@ -32,7 +32,6 @@ digraph MealyMachine {
     q4 -> q5 [label = "Sr"];
     q4 -> q7 [label = "Sca"];
     q4 -> q11 [label = "Sco / Cs"];
-    q4 -> q13 [label = "To / Toc"];
 
     // Transiciones desde q5
     q5 -> q4 [label = "Co"];
