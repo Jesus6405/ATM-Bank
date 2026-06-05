@@ -23,6 +23,14 @@ ATM-Bank/
 └── README.md       # Este archivo
 ```
 
+## Documentación
+
+El sistema cuenta con una documentación extensa generada en la carpeta `docs/`:
+
+1. **[Arquitectura del Sistema](docs/arquitectura.md)**: Explicación de la *Clean Architecture* y el enrutador de mensajes.
+2. **[Máquinas de Mealy](docs/maquinas_mealy.md)**: Definición formal de los autómatas, alfabetos de entrada/salida y tablas de estados.
+3. **[Manual de Usuario](docs/manual_usuario.md)**: Guía de uso de la interfaz gráfica y ejemplos prácticos.
+
 ## Requisitos Previos
 
 Para ejecutar el proyecto, asegúrate de tener instalado Python 3.8 o superior y las siguientes dependencias:
